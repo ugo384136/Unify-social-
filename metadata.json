@@ -1,0 +1,6 @@
+{
+  "name": "UNIFY Socials",
+  "description": "Complete UNIFY social networking ecosystem featuring rich feeds, stories, voice comments, direct messaging, UNIFY MIRROR multi-platform publisher, and UNIFY CONTROL CENTRE administrator suite.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,1456 @@
+Absolutely. Let's bring everything we've discussed into one complete product blueprint for UNIFY Socials — including its social networking features, UNIFY MIRROR, messaging, privacy and security, administration system, and future expansion.
+
+The vision is to make UNIFY more than another social media app. It should be a unified social ecosystem where people can connect, communicate, share content, manage multiple social accounts, and interact through one platform.
+
+### UNIFY Socials — Complete Platform Breakdown
+
+![Content Planner designs, themes, templates and downloadable graphic elements on Dribbble](https://images.openai.com/static-rsc-4/w4grpiKAEVxn4k5zhNJo1mUm84PL8OWXFuiX8NiBtbBjpfesBrlz4z_3mFPIPCGLLJC1zvxFxkc5o7EnncvwHYEyuAaLYNgC75bg_vHPYl8cCf2IlF9GjlqWcPB_INyHGMOjVd3aS3QPXSLOVYrHfTJ8J5nnyEk2Hig3KuF1uUhoJdGlRjRZ33Tp2hSYWhDb?purpose=fullsize)
+
+![Messenger Dashboard | Web Design :: Behance](https://images.openai.com/static-rsc-4/Ic6DkAjYXaP0mFsnXrKxthKvEJoZ_g3jeQxXKwT_IfUCYva645lYuDM6CP7bph3fgxNX5HAOycJIC5_-YWG2k_cW2SCcrqwrDu7YI1fADbKhiSmMKqV666-ZarIJZk2_1IzqLWiSY3_HbvJTiiZDWN36E9Bvmc3jlTdSBxDIUt-QXnwsu2QA6bfj3nLd0p0h?purpose=fullsize)
+
+![Social Media Analytics Dashboard by Fireart UI/UX for Fireart Studio on Dribbble](https://images.openai.com/static-rsc-4/VydZIyTUB2RN8b-HzxSVLLcchwOAO8AJcUfa0TsgLUZjjYD-7S6mbl-9sUFkCuGrY5Df_18HdYrru11F_zZ-_TOUQnlEFLP5FOigz0HJJUg8DV5AIZUnUdNwB9Qa-iNHoxHESk_42f_SwysS_Gs6Cy-hYMpyYrUXtcSyig-XpHkKJP-DX1ItY6c1Nr5Udd-b?purpose=fullsize)
+
+### UNIFY Socials
+
+One platform. Multiple connections. A unified social experience.
+
+Social networkingUNIFY MIRRORReal-time communicationUnified administration
+
+### 1\. The overall vision
+
+UNIFY Socials is designed as a comprehensive social networking platform combining:
+
+* Traditional social networking.
+
+* Photo and video sharing.
+
+* Stories and short-form video.
+
+* Direct messaging and voice communication.
+
+* Social discovery and recommendations.
+
+* Private and public communities through social relationships.
+
+* Multiple external social account connections through UNIFY MIRROR.
+
+* Unified content publishing and social account management.
+
+* A dedicated administration and moderation system.
+
+* A foundation for future Android and iOS applications.
+
+The initial product is a responsive website, architected so that dedicated mobile applications can be developed later.
+
+### 2\. Main user application
+
+The main UNIFY application has five primary navigation destinations.
+
+Main navigation
+
+5 destinations
+
+Home
+
+Discover
+
+Messages
+
+Alerts
+
+Profile
+
+Desktop: sidebar navigation. Mobile: fixed bottom navigation with safe-area support.
+
+### 3\. Home — the social feed
+
+![Social Media App — Mobile UI Design by Sheikh Raihan for Kites Design on Dribbble](https://images.openai.com/static-rsc-4/inT70RVelRbwyFtPXZ2bHJzEu5VHR6E0E3P63UEwI5_OaKKhWeh2tO6rs6lB6JclRCrFK98suYA6c2sYyVg4KQ6Hxz5B8ZLwLMs2eay8WAT4f4yb-TRpjW9wTqXjed3V1PIHWhkuhq0NwJ4Xy6B4gk_cD2mQFTNMlDHP22RchnTe7yZXyDsp3GqzeZQJJ9iv?purpose=fullsize)
+
+![Social Media App - Concept
+Filter feed by Amélie Lobe on Dribbble](https://images.openai.com/static-rsc-4/BY9O7_9bPEUNIXN9-YGxRv7Yes8-Tv5mEe5oXgYDWoJPv3RHgSrudeqUReYI9fjStSqLeEbkLDLGKQ-YKfSJOL3RqSjCM3TZzz7uZdrbUz-QoOzfa8qzTHBttoy_nEPRe4SkcYL3ZtYMjblYy5rla1bxAZ12YO8AITBmD6saTOi3eQCYBfAkLzoG0lFeAId4?purpose=fullsize)
+
+![Social Media App Design by Awe Mobile App for Awe Design Studio on Dribbble](https://images.openai.com/static-rsc-4/dLCg6KvVNzRczFpdFKzt0tE0i5jnA892FZZIFy2gcaRFZjz8bDIau0wE1axT1o-DFeLHoSTXb4SF0bJ-bN81cuuKVAHpclL4aGx6uAfn_cOOQ7wiNaqEyWP-lUZLqdddVTV_-IpWp4OG8-4Crx375NXriLb7-ojfh7RWaTFmMvJeJrYSvTlyQ3DJFZlKh9ma?purpose=fullsize)
+
+The Home screen is the central place where users see content from their social network.
+
+Feed functionality:
+
+* For You feed.
+
+* Following feed.
+
+* Recent posts.
+
+* Photos and videos.
+
+* Text-based posts.
+
+* Stories carousel.
+
+* Reactions and likes.
+
+* Comments and replies.
+
+* Sharing and reposting.
+
+* User tagging.
+
+* Post timestamps.
+
+* Profile links from post names and profile pictures.
+
+* Content recommendations.
+
+Feed behaviour:
+
+* Prioritise relevant and recent content.
+
+* Rotate and shuffle content in a controlled way.
+
+* Avoid repeatedly displaying the same posts.
+
+* Respect user privacy settings.
+
+* Never show content from accounts that have blocked the viewer.
+
+* Respect private-account follow approvals.
+
+The feed should feel fresh without becoming completely random.
+
+### 4\. User profiles and social relationships
+
+![Createhive - Profile Screen UI (Light Theme) by Michael Kaine on Dribbble](https://images.openai.com/static-rsc-4/PGSJwlRLfbv0IRfenONfEZRihbr08W71c8f26ccmBM53Tt_tbvXANjwnbUwdt9M_Uk5jbfcmtzf2DbHFI8LR8xthDzVW6fDgyrk-lIasilgaCXO3gUq4WHv2lMGJeM-qslcVI8the2cUQcrTaP3Rim4pPLYsU9GO8Z-Q14OqLdnG40RzV1uecz2xy9cGmU22?purpose=fullsize)
+
+![Live chat App by Munna Khan 🔥 on Dribbble](https://images.openai.com/static-rsc-4/fdQ84bxnQbcgUFSMc83HXai_4EqwgM_7sScDklEYdBfLGgCtkAacTTW0Imo1J4-N_9sYJzQAllWpT1ix8B1_20-2yK-6c5iqND4bnX5TaiSw94GsN7z2KjTBeaiTRAxRJyRTOxMhHb_wBCC7pT4QxMm2bgSWnEQIU9I5LBwkowpMsJ5D5CM82DsebzVpIuzA?purpose=fullsize)
+
+![Social Media Profile App Design :: Behance](https://images.openai.com/static-rsc-4/v_o2E0E83T2j7Se4M3Ra81PkHsR6FmA-OKzJZo4pBiRIaJTX2yID2T3wLW8_ma-So_JlKL19sLV08wFOMtXQYH9AZgmt0Ml99CSgj1b3zpSWP1DjTWjspwO4Cxe69oCj1iKeYe3TVfsXrUxz1mD5tDwBmeL8S4Ql7drLWqHDmHZ1-cMWLOV49F2KkXQKkX9i?purpose=fullsize)
+
+Every UNIFY user should have a personal profile.
+
+Profile features:
+
+* Profile picture.
+
+* Cover image.
+
+* Username and display name.
+
+* Biography.
+
+* Personal profile information.
+
+* Followers count.
+
+* Following count.
+
+* Posts and media grid.
+
+* Public or private account setting.
+
+* Follow and Following buttons.
+
+* Message button when permitted.
+
+* Account settings.
+
+* Connected social accounts.
+
+* Profile sharing.
+
+Follow system
+
+When someone visits another user's profile:
+
+* They can follow a public account immediately.
+
+* They can request to follow a private account.
+
+* The account owner can accept or reject private follow requests.
+
+* The Follow button changes to Following when a follow succeeds.
+
+* A Message button becomes available when the relationship and messaging permissions allow it.
+
+Social relationships include:
+
+* Followers.
+
+* Following.
+
+* Mutual followers.
+
+* Follow requests.
+
+* Suggested accounts.
+
+* Blocked accounts.
+
+Blocking system
+
+When a user blocks another user:
+
+* The blocked person cannot view the blocker's posts.
+
+* They cannot follow or message the blocker.
+
+* They cannot comment on or interact with the blocker's content.
+
+* The blocker's profile becomes unavailable or appropriately restricted to them.
+
+* The restrictions must be enforced by the backend, not merely hidden in the interface.
+
+### 5\. Discover — finding people and content
+
+![How to Design a Social Media App: A Step-by-step Guide | by Abron Studio | Medium](https://images.openai.com/static-rsc-4/lXwlKY43ICFDJIc3WiqDtLGtrIDCw9KWsBpurpa1vqHFuZfHb1X0Qu6YnsiBpUQbXD10u9PiL6TbiT6Erkr6fUKF5UL1U9ml3vVWx_kZBSdnLR2aWzbu9V1LmXPm6F711q2Xh7XvN-5tRdfUuUiRk8sD4m3XRYj6l_LVvG0_pHmMnH-BD-01WWWz7-EkdWY9?purpose=fullsize)
+
+Discover helps users find new people and content.
+
+Features:
+
+* Search users by username.
+
+* Search display names.
+
+* Open profiles from search results.
+
+* Discover public posts.
+
+* Explore photos and videos.
+
+* Discover trending hashtags.
+
+* Suggested accounts.
+
+* Recommended content.
+
+* Popular content discovery.
+
+* Discover creators and communities as the platform expands.
+
+Public posts can be discovered by UNIFY users, subject to privacy, blocking and content visibility rules.
+
+### 6\. UNIFY Stories
+
+![Instagram Stories: The Complete Guide to Using Stories to Boost Engagement + Reach](https://images.openai.com/static-rsc-4/F4m74lWsPDD9mdwGbhMnVPyBABHCU5XAamJml_4sZDEEOug7Gl4cWSxOZqZzYftG4kAbLMZh2LHxB0vryX14_fVcHNwk6jYkIrAEQb9TaWVR6I30XQEe_3pRx6wWkscECpERGBcXCABPDGDax9xPVCTlSfsUZLFdTPX8RGmuZzD4y8B6Qi2QR_K6PC60mk-F?purpose=fullsize)
+
+Stories provide temporary, visual updates.
+
+Features:
+
+* Upload photo stories.
+
+* Upload video stories.
+
+* View stories.
+
+* Story navigation.
+
+* Story viewers.
+
+* Story reactions.
+
+* Story replies.
+
+* Story privacy settings.
+
+* Story deletion.
+
+* Expiration after a configurable period, with a 24-hour default as a proposed standard.
+
+* Notifications for relevant story interactions.
+
+The system should support media processing, thumbnails, storage limits and content moderation.
+
+### 7\. Posts, comments and interactions
+
+UNIFY should allow users to express themselves through different content formats.
+
+Post types:
+
+* Text posts.
+
+* Image posts.
+
+* Video posts.
+
+* Multiple-image posts.
+
+* Shared or reposted content.
+
+* Future support for additional media formats.
+
+Post interactions:
+
+* Like and react.
+
+* Comment.
+
+* Reply to comments.
+
+* Share.
+
+* Repost.
+
+* Tag users.
+
+* View post details.
+
+* Delete or edit permitted content.
+
+* Report inappropriate content.
+
+Comment tagging
+
+Users can tag mutual friends in comments.
+
+When someone is tagged:
+
+* They receive a notification.
+
+* The notification links directly to the relevant post and comment.
+
+* They can open the discussion.
+
+* Tagging restrictions prevent abuse and unwanted repeated mentions.
+
+### 8\. UNIFY Messages — direct communication
+
+![Chat Mobile App by Arip for Hatypo Studio on Dribbble](https://images.openai.com/static-rsc-4/3nuy_dJgKT5CVTQ2SdBJle0NrY5UxTPPoDOj5FMFySYxJQ81Oi-IsERQSIOovopLaOEOQCjUas3rWLOeuwItCyUUNogVW9kx_snBJIQiZDKOkKnRx_RJDY29-iF8cIdVFgZR1E-CLk4LtjJGUqr79m2JI34aXRKqEJMBb9Vg_2r4UMt4P3YFzeIB1aUooq5_?purpose=fullsize)
+
+![Chats Application by Nitin Rathod on Dribbble](https://images.openai.com/static-rsc-4/7OA-Swejitd6EArTcTK28wJXJYr-89NGBB2ne7kl54WOO9C_WaXyCUOfdVrMjrkZSxXlJGXfVR7dTD5VF3vLdegJbNp6aWGVRei95P_n2enuQHLIPBFgQ43whvGNbwlxWBKHywHJ4JYtrnC5kGDVGBL4-Y8Cq7SdQI3KF3z3KnDaqse2wQsDzwg6unbTHQ1n?purpose=fullsize)
+
+![Cez Messenger už pošlete celú rozprávku na dobrú noc. Hlasové správy môžu mať až 30 minút](https://images.openai.com/static-rsc-4/ibeXqvO33aZP_LfPlnlg2Hh_kYIvH9kt1ec0JuwEZIHjL1Ez9UcJPA_dJ5P5tbqT7oRsCoJxFBzfv7qaL-qDGPfuFUGAGgKs89wLgDpgHE_yMP0yPVuCRF7x6tjB4OI6PZSTRU8orVjenQJ8sXCdAmN13HATYNVbpWBEmMoiVKWkd97nns8KoMgdhg-ERfq6?purpose=fullsize)
+
+Messaging is one of the most important parts of UNIFY.
+
+Core messaging features:
+
+* One-to-one messaging.
+
+* Conversation lists.
+
+* Text messages.
+
+* Image sharing.
+
+* Video sharing.
+
+* Media attachments.
+
+* Voice messages.
+
+* Message timestamps.
+
+* Message delivery status.
+
+* Read receipts.
+
+* Typing indicators.
+
+* Online status.
+
+* Message notifications.
+
+* Message history.
+
+* Multiple-device synchronization.
+
+Messaging permissions
+
+The messaging system follows social relationship rules:
+
+| Relationship                     | Messaging behaviour  |
+| -------------------------------- | -------------------- |
+| Mutual followers                 | Direct messaging     |
+| Non-mutual users                 | Message request      |
+| Private account without approval | Restricted           |
+| Blocked users                    | Messaging prohibited |
+
+Message requests
+
+If someone who is not a mutual connection sends a message:
+
+* The message enters Message Requests.
+
+* The recipient can preview and review the request according to privacy policy.
+
+* They can accept, decline or block.
+
+* Accepting allows the conversation to proceed.
+
+* Declining prevents the request from becoming a normal conversation.
+
+Real-time messaging
+
+The system should support:
+
+* Real-time message delivery.
+
+* Server acknowledgements.
+
+* Optimistic message display.
+
+* Retry after failed sending.
+
+* Sent, delivered and read states.
+
+* Configurable read receipts.
+
+* Configurable online and typing visibility.
+
+A message should not be marked delivered until the server confirms delivery.
+
+### 9\. Voice messages and voice comments
+
+![Develop wechat, viber, telegram, signal, snapchat clone for android and ios by Lucas_vaxx | Fiverr](https://images.openai.com/static-rsc-4/3J31I-D5Gw2k16B2DWSoQ5Fbzh4B2Q-uk4zonZmV57md4dSuu-MbFH-Tt06vY-QViKmrz8KwQxGrddrYHzrnPFZe894esBarET44q2rDAQx_AmYorqXx0Jhd7-pgB3KmB-AJLT8atpfNoQkg8LI1s1kfoG18F8rlF1J3oWvLOwJ_p6JAA-pCQcZLSCHtLi-Y?purpose=fullsize)
+
+UNIFY should support voice communication directly inside conversations and discussions.
+
+Voice messages:
+
+* Record audio.
+
+* Preview before sending.
+
+* Play and pause.
+
+* Replay recordings.
+
+* Display audio waveform.
+
+* Display recording duration.
+
+* Store recordings securely.
+
+* Send voice messages in direct conversations.
+
+Voice comments:
+
+* Record audio comments.
+
+* Attach audio to relevant posts.
+
+* Play and pause audio.
+
+* Display waveform and duration.
+
+* Moderate reported voice content.
+
+Voice recordings require file-size and duration limits, secure storage and appropriate reporting controls.
+
+### 10\. UNIFY MIRROR — the major differentiator
+
+Flagship feature
+
+![HighLevel Social Planner 101: Everything You Need for 2026 — How To HighLevel](https://images.openai.com/static-rsc-4/cnD5mYbGpG1HcLgMssjWh0OIxCYngT5edu_tWQ4O0ggsVBZI3Z3iiMlzx28uzUvvoB9R1oB5673_JXFEK1ows_cx-TXVsESL3zZTpNox21BozyZfmUW-BLPwiOmu6DOXp6l2vHQ_oH9CWFlwyBYa--40sHV18bHaS3957hEdQUqN7cs6x-FXIIa7zi7b9RSz?purpose=fullsize)
+
+![Social Media Calendar and Scheduler](https://images.openai.com/static-rsc-4/EMbK_B8SmKEQAA8opi9C3aYpbdVVXFZbtHBqvtgJ48pQtlU7qQQ2tE7AQgcT67MYOc3A6iGzUHz7vwsJHClIxmNh8UpX6tKAEeLWJCCvaVKWcblobHc5b9M5AnMsyWYuEn1fQt4Fy0bYWMVyfCiD3d2wqP7cI9iVflUmlmj7VO67PUa4K2hE0kD11W4E1k1q?purpose=fullsize)
+
+![Social Channels](https://images.openai.com/static-rsc-4/AN8dHlWx1VvGs0IWHZUJPKmPvujQba-A9Q95FH3wL5ewuiauQmc6-D6scrW-m7gPvVGEEHUuSvctJJNvNhFUDL1kvV0D3WqoIcByIDtC9iTjgsHcAnppBLADqFX-_fAEP5qiRRiiyo-fnlkiKF9wW9DP6CnIWkWpxLZ6gC8jbLsJEoKBtTRMvrqxgD0aAgyR?purpose=fullsize)
+
+UNIFY MIRROR is the feature designed to make UNIFY stand out.
+
+Its purpose is to bring supported external social networks into one unified environment.
+
+Instead of repeatedly opening different social apps, users can connect supported accounts and manage available activities through UNIFY.
+
+### 10.1 Supported external platforms
+
+The intended integration list includes:
+
+![Connect | David Hernandez Ministries](https://images.openai.com/static-rsc-4/S_0qCWS2lIRvsu_z55p848gmP2AsopAiBgeLaz3dRBBJ0y-GcEnMJ_xFYjBoVnKsX_abv0ilz3u-rthxEJ8pttCbRyRtMTh8J-hoeIC2nXRoL_ulxzTlFtY9VQzAGF7mMolkLgojU9vhDaJEcGUjHzAlWCexbc3-4740P2QJGB6dguDb2t7lyrFc0P62rfyH?purpose=fullsize)
+
+Facebook
+
+![St. Croix Sauna](https://images.openai.com/static-rsc-4/SAiGcCCPnmuNlRsMTNQUi2ZO0eImV_-trZwlx4Czjc2wv8IchwItg6jMKgX4wNPY5f8dctXErKF-IJfocUIMyJJQJ2RAgIID9tzfNlXnef6zsXwFWGi4z_MRPuG62uafNsjfnt__Vrddm0HgjbD8JvlJS8MdYzs5jf5FI22V4hxR4B7S5t-kxG7fA0BFNIEt?purpose=fullsize)
+
+Instagram
+
+![Introducing TikTok for Good Launchpad UK - Newsroom | TikTok](https://images.openai.com/static-rsc-4/LDKduXKMHBjJDVjUGhZqs4a5Sfz6uZyGoWrPFVPyXRNfzp5JjrzFz74hZ019N4gigfwA23Fju6CxlV-oLx4m87wEk2HyjZM-X-NwogDeUb3z_6n2eAwOan50PfyXxXtYgnIdQrJxHlaUtWnquuGOmFpwuHfKi91UbODqohzdsWQt1XuSZ3l7UCR-QhLFkZIN?purpose=fullsize)
+
+TikTok
+
+![YouTube App Adds HDR Support for iPhone 12 - MacRumors](https://images.openai.com/static-rsc-4/nQu5sIdLMlDqlKzhLVesjakHH08sfF7eNxqoKWaYQsiiEiHetLNCqjHEg2pth-99hqZsiwywhRAu9CBEHJI0HGXxPYh35C8zk---ZL9KXXdDlfTEEAyXea2Q4eNmC2a62MXFydQcgGDmSgR9U2-zpRHo6uXH79TaogAxOktB7-vm9pDvNqaQrx2_yu3MAmCr?purpose=fullsize)
+
+YouTube
+
+![File:X logo 2023 original.svg - Wikimedia Commons](https://images.openai.com/static-rsc-4/1kb0OZt33-YPS2hHlrPfoWn2Wc4b1-BInLZItSGzx1540I6bJIRu4OfHR4SBx7AUvsLGo-DW_uASJT43PAjZfVo221GszizrjcBE1nqVth6NkCm89W5p2tzFrPKNt-Oaw3MAdEQu-ZmdJfxH8ZAKEmNO_vUs42frddtmT1WCNPoAlVZSCHYAnjSk0bVr-498?purpose=fullsize)
+
+X
+
+![Boomly — AI Operating System for Ambitious People](https://images.openai.com/static-rsc-4/e1ED2MD6KXEWmIZKfM8SU3TJVQvXXtd7BXHwwFq9d1DetDPTBQwi65Clc_MqpINARfX593f1vnXz9LqvUGKRBGMiexKnaNZC0ufAaWuG_XQp1PdQm5CYrvV9l949rLO_DvQHCxW2YYNJEwDAbgrsNcVnsnuDYRASPhFq-6M_MmkmxJgHzgUCv3NrsC0jYSGK?purpose=fullsize)
+
+LinkedIn
+
+![File:Snapchat logo (2019).png - Wikimedia Commons](https://images.openai.com/static-rsc-4/Ill6OFaz7KX0t97VBNT76KPe32ol4Ksvzoldu0GSnsXInsNDfWaoIpOf0ZBcAjdj6UFHDweYcr1cfivB7aP8Z28y518SLJVdErJP7t9RR7Ebz3ecH_VsRTjvKgItQeMXzWb6yVujGVbbt4lJzuNzlpD4IYgm82vxDNZr_RS1B_cobj2NYjFOoGwYXLTNUKFP?purpose=fullsize)
+
+Snapchat
+
+![Pinterest color icon in PNG, SVG](https://images.openai.com/static-rsc-4/ezK2B78a1JkNIy_rs3W5YvfAL1FPGvxp2BXHlgHCivSmslVQXPJuJnsVvJQDynuYw7bNpqd47woYOjueDp8mVv4jQaV2na__pNU5JiebIyOp2MhUA_ZX7O6CzPypZE20SfNbcu7-MvsJ2iL4hBP0bEHISMuDLsl8WLhcI8VQSZgwxEyowig4Ol0eJqLo9QhJ?purpose=fullsize)
+
+Pinterest
+
+These are target integrations, not a guarantee that every platform permits every feature through its API.
+
+### 10.2 Connect multiple accounts
+
+Users should be able to:
+
+* Connect multiple external accounts.
+
+* Authorise access through official OAuth flows.
+
+* See their connected accounts.
+
+* Disconnect accounts.
+
+* Reconnect expired accounts.
+
+* Switch between accounts.
+
+* View account connection status.
+
+* See permission and integration health indicators.
+
+The user should not need to repeatedly log in while a valid authorised session remains available.
+
+External passwords must never be stored by UNIFY. Access tokens must be encrypted and securely managed.
+
+### 10.3 Unified social content
+
+Within UNIFY MIRROR, users should be able to view supported content from their connected networks.
+
+Potential capabilities include:
+
+* Viewing external account posts.
+
+* Viewing supported media.
+
+* Viewing account information.
+
+* Viewing available engagement information.
+
+* Opening original content on the external platform.
+
+* Switching between connected platforms.
+
+The actual available content depends on each platform's API permissions.
+
+### 10.4 Unified publishing
+
+![How to Create a Post on Nuelink - Nuelink](https://images.openai.com/static-rsc-4/3ZFpiB-eU8jqxlQTM3PzdCFHXF4shTF2D6D_jUOcwxSYaMwe1E9lBw7U6DNkYfEq7ea-EYZfBG3bg8_SSPRC1yTuPBA-gZw9waU9JHsLe_dkLm-guxEhsiseUTH9UUOqagJMvn17FN9JPrGGpjAHvd18UiZp-2w0BAmUHR3DmHciMQ58A2FQcH8EGEK1SfAY?purpose=fullsize)
+
+A user should be able to prepare one post and select multiple connected platforms.
+
+For example:
+
+* Create a post in UNIFY MIRROR.
+
+* Upload an image or video.
+
+* Write a caption.
+
+* Select Facebook, Instagram, TikTok or other supported destinations.
+
+* Review platform-specific formatting.
+
+* Publish to selected platforms.
+
+* Track publishing results.
+
+Additional features:
+
+* Platform-specific caption editing.
+
+* Preview before publishing.
+
+* Publishing queue.
+
+* Scheduled publishing where supported.
+
+* Failed publishing notifications.
+
+* Publishing history.
+
+* Retry where permitted.
+
+* Per-platform publishing status.
+
+### 10.5 Unified inbox and notifications
+
+Where official APIs permit, UNIFY MIRROR should bring together:
+
+* External comments.
+
+* Supported messages.
+
+* Mentions.
+
+* Notifications.
+
+* Engagement activity.
+
+Where an API does not permit an action, UNIFY should provide an appropriate link to open the original platform rather than pretending the action works.
+
+### 10.6 Integration management
+
+The system needs:
+
+* Separate adapters for each platform.
+
+* OAuth token management.
+
+* Secure token refresh.
+
+* API rate-limit handling.
+
+* Integration health monitoring.
+
+* Permission management.
+
+* Sync status.
+
+* Error logging.
+
+* Expiration alerts.
+
+* Platform capability indicators.
+
+This is especially important because Facebook, Instagram, TikTok, YouTube, X, LinkedIn, Snapchat and Pinterest all have different API capabilities and restrictions.
+
+### 11\. Alerts and notifications
+
+![Vibe - Profile & Notifications UI for Social Networking App by Sagor Shopon 🔥 for Design Veli  on Dribbble](https://images.openai.com/static-rsc-4/-LmEQU94Qk6vVPoAMsmeJvYHQFJ-BEkuEtNxSlvUJhf1qyxSY5A2NJneKS9YR3gU88mbl6TPdWR0XxVGBJTGoXkxH0aQbNIYlzLf24GJlW--8NnhXFBMeqNSQSQS7Ks9uKzRAbSlZKSTpnAPkgHU0WV_klPZM6sW9tXUIdQhaKyi7IPn6oSqin0mcHLp4xC4?purpose=fullsize)
+
+UNIFY notifications should cover activity across the platform.
+
+Notification categories:
+
+* New followers.
+
+* Follow requests.
+
+* Accepted follow requests.
+
+* Likes and reactions.
+
+* Comments.
+
+* Comment replies.
+
+* User mentions and tags.
+
+* Direct messages.
+
+* Message requests.
+
+* Voice messages.
+
+* Story interactions.
+
+* Post shares.
+
+* Account security alerts.
+
+* UNIFY MIRROR connection alerts.
+
+* External publishing failures.
+
+* Platform announcements.
+
+Users should be able to configure notification preferences.
+
+Notifications should be delivered reliably and link to the relevant content or action.
+
+### 12\. Account settings, privacy and security
+
+Users need control over their accounts and personal information.
+
+Account management:
+
+* Registration.
+
+* Login and logout.
+
+* Password recovery.
+
+* Profile editing.
+
+* Username management.
+
+* Profile photo management.
+
+* Account deactivation.
+
+* Account deletion.
+
+* Session management.
+
+* Security notifications.
+
+Privacy controls:
+
+* Public/private profile.
+
+* Follow approvals.
+
+* Messaging permissions.
+
+* Tagging permissions.
+
+* Comment permissions.
+
+* Online visibility.
+
+* Read receipt settings.
+
+* Story visibility.
+
+* Blocked accounts.
+
+* Discoverability settings.
+
+Security foundation:
+
+* Secure authentication.
+
+* Backend-enforced authorisation.
+
+* Supabase Row Level Security.
+
+* Secure session handling.
+
+* Protected API endpoints.
+
+* Encrypted sensitive information.
+
+* Secure external OAuth connections.
+
+* Abuse prevention and rate limiting.
+
+### 13\. UNIFY CONTROL CENTRE — administrator portal
+
+Dedicated administration system
+
+![Dashhark X – Modern Admin Dashboard UI Kit by M. Ali on Dribbble](https://images.openai.com/static-rsc-4/mQU4LOq3C1KcJbgjzFCZcZa8h2KgIYTEHB2X80sEdPQxOSBrzlnjbhln4hm53xPvB2H_6BGjN1WJzi_xnZu92c1VF9E1js_qLX5Efia2EL6m7QMtncdpPDykmnPJdYU3gI2JQjw2PUCW0YkclORwp_UYpzhLjM0nKfaVjsXvnJj9db6OBF75g3Wx7gUMCEsz?purpose=fullsize)
+
+![Discord Mass Report: Complete Guide to Report Bots & Tools](https://images.openai.com/static-rsc-4/Rb7O9GzaX4dYbjWr7tYy59cSMIW4CUuL_w8XuohS1SBfnSC1ta1F7SBWSCjeGZdz-09MpbilGV7hkqOS89xEEcMZSSzZ_OxMKHEwuDuEmgsIkzclFiSl412qAgHRK6a_2jiPVyVxafE6ji8w0ZlD5l24uvZ3IoiaB91WcfmEzvnaei3ZDVyps6UCVhuMZpYd?purpose=fullsize)
+
+![Uraal – The Next-Gen Social Network Platform | Codester](https://images.openai.com/static-rsc-4/OnXX4HiWmj-VnJ9cabprVdZLVKnPanU-1_u8LYO9SPLk6t5SHx6WfUiRs_YrsMAQw_AVrMPf3na1Aenv485Z0BXmWkuUyGkkQMAJ1xj3-PyN3x8n11f7UiVA5FWCPE6HGhSFjt7ohry65JLTXF1lkT4kUuYsAlwsYuYWO-lOFOdKtfrMw1Rn2esNkOpF6LSB?purpose=fullsize)
+
+UNIFY CONTROL CENTRE is the administrative command centre for the entire platform.
+
+We selected a hybrid architecture:
+
+* A dedicated administrator portal, potentially `admin.unifysocials.com`.
+
+* Separate administrator authentication controls.
+
+* Shared secure backend.
+
+* Normal users cannot access administrative functions.
+
+* Every administrative action is controlled by permissions.
+
+### 13.1 Dashboard overview
+
+Administrators should see:
+
+* Total registered users.
+
+* Active users.
+
+* New registrations.
+
+* Currently online users.
+
+* Public and private accounts.
+
+* Total posts.
+
+* Comments and reactions.
+
+* Followers and follow requests.
+
+* Messages and message requests.
+
+* Reports and blocks.
+
+* Connected external accounts.
+
+* Media storage usage.
+
+* Platform activity trends.
+
+The dashboard should provide a real-time overview of platform health and activity.
+
+### 13.2 User management
+
+Administrators should be able to:
+
+* Search and view user accounts.
+
+* View account status.
+
+* Review reported accounts.
+
+* Suspend accounts.
+
+* Ban accounts.
+
+* Restore accounts.
+
+* Manage verification.
+
+* Review appeals.
+
+* Force logout where security requires it.
+
+* Review relevant security events.
+
+All sensitive actions require appropriate permissions and audit records.
+
+### 13.3 Content management
+
+Administrators and authorised moderators should manage:
+
+* Posts.
+
+* Comments.
+
+* Stories.
+
+* Videos.
+
+* Reposts.
+
+* Reported content.
+
+* Spam.
+
+* Inappropriate content.
+
+* Copyright complaints.
+
+* Content removal and restoration.
+
+### 13.4 Relationship and privacy management
+
+The admin system should monitor:
+
+* Followers and following.
+
+* Mutual relationships.
+
+* Follow requests.
+
+* Suspicious activity.
+
+* Fake engagement.
+
+* Abuse of blocking and tagging systems.
+
+* Privacy enforcement failures.
+
+### 13.5 Messaging administration
+
+Administrators should monitor:
+
+* Messaging service health.
+
+* Delivery failures.
+
+* Message request volumes.
+
+* Spam and abuse reports.
+
+* Rate limits.
+
+* Realtime service health.
+
+Private messages must not become freely accessible to administrators. Moderation access should be limited to reported evidence and permitted operational metadata. If end-to-end encryption is introduced, there must be no administrator backdoor.
+
+### 13.6 Voice and media moderation
+
+Administrators should manage:
+
+* Reported voice messages.
+
+* Reported voice comments.
+
+* Uploaded photos.
+
+* Videos.
+
+* Media processing.
+
+* Storage limits.
+
+* Malware scanning.
+
+* Media retention policies.
+
+### 13.7 Trust and safety
+
+The moderation system should include:
+
+* User reports.
+
+* Content reports.
+
+* Harassment reports.
+
+* Impersonation reports.
+
+* Spam reports.
+
+* Scam reports.
+
+* Threat reports.
+
+* Hate content reports.
+
+* Copyright complaints.
+
+* Unwanted messages.
+
+* Voice abuse reports.
+
+* External account abuse reports.
+
+Moderation workflow:
+
+* Report submitted
+
+* Report enters moderation queue
+
+* Moderator investigates
+
+* Decision and enforcement action
+
+* User receives notification
+
+* Appeal and review
+
+* Final resolution recorded
+
+### 13.8 Verification management
+
+Verification should support:
+
+* Individual accounts.
+
+* Creators.
+
+* Organisations.
+
+* Official accounts.
+
+Administrators can review applications, approve, reject, revoke and process appeals.
+
+Verification should be based on identity and authenticity criteria, not simply follower count.
+
+### 13.9 Announcements and communication
+
+Administrators can create:
+
+* Platform announcements.
+
+* Maintenance notices.
+
+* Security announcements.
+
+* New feature announcements.
+
+* Policy updates.
+
+* Scheduled notifications.
+
+* Targeted announcements.
+
+### 13.10 UNIFY MIRROR administration
+
+The admin portal should include:
+
+* Connected platform overview.
+
+* OAuth configuration.
+
+* API health.
+
+* Token expiration monitoring.
+
+* Refresh failures.
+
+* Publishing queue.
+
+* Sync errors.
+
+* Platform capability configuration.
+
+* External account connection statistics.
+
+Never expose raw access tokens in the dashboard.
+
+### 13.11 Customer support and helpdesk
+
+The system should include:
+
+* Support tickets.
+
+* Ticket categories.
+
+* Priority levels.
+
+* Assigned support agents.
+
+* Ticket status.
+
+* Internal notes.
+
+* User communications.
+
+* Escalation.
+
+* Resolution tracking.
+
+### 13.12 Analytics and business intelligence
+
+Administrators should be able to analyse:
+
+* User growth.
+
+* User retention.
+
+* Daily and monthly active users.
+
+* Post engagement.
+
+* Messaging activity.
+
+* Content performance.
+
+* Discover activity.
+
+* UNIFY MIRROR usage.
+
+* Publishing performance.
+
+* Platform trends.
+
+All analytics should be based on actual application data, not fabricated dashboard numbers.
+
+### 13.13 System health and technical operations
+
+The admin portal should monitor:
+
+* Database health.
+
+* Supabase availability.
+
+* Realtime services.
+
+* Storage.
+
+* API response times.
+
+* Error rates.
+
+* Background queues.
+
+* Integration health.
+
+* Deployment status.
+
+* Incidents.
+
+### 13.14 Administrator roles and permissions
+
+The platform should have granular role-based access control.
+
+| Administrator role   | Main responsibility                     |
+| -------------------- | --------------------------------------- |
+| Super Admin          | Full platform administration            |
+| Platform Admin       | Platform operations                     |
+| User Manager         | User accounts                           |
+| Content Moderator    | Posts and comments                      |
+| Trust & Safety Admin | Reports and enforcement                 |
+| Support Agent        | Customer support                        |
+| Integration Manager  | UNIFY MIRROR                            |
+| Analytics Admin      | Reports and analytics                   |
+| Technical Admin      | Infrastructure and technical operations |
+| Finance Admin        | Future financial operations             |
+
+Security requirements include mandatory administrator two-factor authentication, session expiration, audit logs, emergency access revocation and backend permission checks.
+
+### 14\. Future expansion
+
+UNIFY should be built with room to grow.
+
+The following are potential future modules rather than confirmed current features.
+
+![Social App UI -  — Clean UI Concept by Md. Shaikh Ismail Sami on Dribbble](https://images.openai.com/static-rsc-4/MkH99F1T61DHieAfvtR8_aONKjr4EslGamatpS-OTN22WhOg_ORoKKDBlGr3dQSykycifh5RTa0PjKcG9LxER-ZFo1LwpEPrSbHfs2vfiRvq0C1da69MjPgd_fjFpY6jp4exEjMAO7DGjOn9EkNj_HpIuhQcdrY_dDQAUw8KL8Ewmb8QNbid9UUyY_RkGc3B?purpose=fullsize)
+
+Communities and groups
+
+Group memberships, group discussions, community moderation and private groups.
+
+![Empezó siendo una copia de TikTok y ahora factura lo mismo que Coca-Cola: la brutal remontada de los Reels de Instagram](https://images.openai.com/static-rsc-4/Xssj5BApiNJ6glzjrp-KYmQnMN4XmJH8T3Pc9k4CBA83dttKD7qoHX9uBK97kXHF5Qx0GjEVona1oYq1LvU2EyiZE1p3tRPElWW6MlzjKC7aBw8dUlZ4gybkD3OS70qe1avPbSCskXst7uqFF-nDtLzmngdAJIVBFIVhOMoruWs3jl9vdhbxzf6mWtQNMRMW?purpose=fullsize)
+
+Short-form video
+
+Vertical video feeds, creator tools, editing, discovery and recommendations.
+
+![Video Call App UI Design :: Behance](https://images.openai.com/static-rsc-4/1ZxCoqtxwX9kTIH_OQ6oOLBwhif6r7Xace3ZH4OSDItikYuE8roNLobqPctRj1elxnI_nCJDQXoDlt5S9WkFhFN9tku3bP_c1N9QpE5uAf1jAGOw4hzqdNbYVLCDvJPnShy-4y4s_rFTqQJFJoQy39ww_UbTpY1VJxanHpFVGu3SAY0_CoODNG2pVhiwhO81?purpose=fullsize)
+
+Voice and video calling
+
+One-to-one calls, group calls and call notifications.
+
+![Anvil Creators | Creator Monetization Partners for Influencers](https://images.openai.com/static-rsc-4/xZ3b4N621fT4hqNpPc6JLnJ1x0HbYLdHnvSim_lKMMggxzcJN51B4fUo0uuKULREAkzb2slbRIApns8smASMrtj7GCSYTsgX0YntAhunOBc-FMx4qWEOQs4yYdnsOV6WMmIqKrNd6jWpnXUXK-ZKz3ufnL5ccdkoi6pAeNHPP2v_Ca4imf0l54Ak8LsaDm6X?purpose=fullsize)
+
+Creator and monetisation tools
+
+Creator analytics, subscriptions, promotional tools and potential revenue-sharing features.
+
+![Social Networking App UI :: Behance](https://images.openai.com/static-rsc-4/TbNyIqqYf3b9u0KBMcLvD3Qy9bHBlPDlATzkhP4edeVwa7q6W78YvKBPH4WYAhgCAghNqRGMpukiz0QBDsVo0j0aezRxSC1BSvzP_qZZBPMbVmZVCDUuX5BE9Ym0D1FB-Jw33FLBUKTNi1lT9kmOQuE1rVgu3do8UMGsg2LSC9UajovSBHi2-K7xTV32dzrB?purpose=fullsize)
+
+Native mobile applications
+
+Dedicated Android and iOS apps built on a shared backend.
+
+### 15\. Technology and architecture
+
+The preferred technology stack we discussed is:
+
+| Area            | Technology           |
+| --------------- | -------------------- |
+| Frontend        | Next.js App Router   |
+| Language        | TypeScript           |
+| Styling         | Tailwind CSS         |
+| Icons           | Lucide React         |
+| Backend         | Supabase             |
+| Database        | PostgreSQL           |
+| Authentication  | Supabase Auth        |
+| File storage    | Supabase Storage     |
+| Realtime        | Supabase Realtime    |
+| Data fetching   | TanStack Query       |
+| Forms           | React Hook Form      |
+| Validation      | Zod                  |
+| Version control | Git                  |
+| Deployment      | Vercel or equivalent |
+| Future mobile   | Expo / React Native  |
+
+The backend should include versioned database migrations, secure Row Level Security policies, proper indexing and server-side authorisation.
+
+The application should use modular architecture so that social features, messaging, UNIFY MIRROR and administration can evolve independently.
+
+### 16\. Complete feature inventory
+
+Here is the consolidated checklist of the product scope.
+
+UNIFY master feature checklist
+
+0/91 reviewed
+
+Tick an item to mark it reviewed in this checklist. This does not indicate that the feature is implemented in your application.
+
+Core social networking
+
+0 of 17 reviewed
+
+User registration and authentication
+
+User profiles
+
+Public and private accounts
+
+Followers and following
+
+Mutual connections
+
+Follow requests
+
+Blocking and restrictions
+
+Home feed
+
+For You and Following tabs
+
+Post creation and editing
+
+Photo and video posts
+
+Likes and reactions
+
+Comments and replies
+
+User tagging
+
+Sharing and reposting
+
+Discover and username search
+
+Recommended users and content
+
+Stories and media
+
+0 of 8 reviewed
+
+Photo stories
+
+Video stories
+
+Story viewing
+
+Story reactions and replies
+
+Story viewers
+
+Media uploads
+
+Video processing and thumbnails
+
+Media privacy and moderation
+
+Communication
+
+0 of 12 reviewed
+
+Direct messaging
+
+Message requests
+
+Mutual-follower messaging
+
+Realtime conversations
+
+Message delivery status
+
+Read receipts
+
+Typing indicators
+
+Online status controls
+
+Image and video attachments
+
+Voice messages
+
+Voice comments
+
+Conversation notifications
+
+UNIFY MIRROR
+
+0 of 19 reviewed
+
+Facebook connection
+
+Instagram connection
+
+TikTok connection
+
+YouTube connection
+
+X connection
+
+LinkedIn connection
+
+Snapchat connection
+
+Pinterest connection
+
+OAuth authorisation
+
+Multiple connected accounts
+
+Account switching
+
+External content viewing where supported
+
+Unified publishing
+
+Multi-platform publishing
+
+Scheduled publishing where supported
+
+Unified inbox where supported
+
+External notifications where supported
+
+Token refresh and expiry handling
+
+API health and sync monitoring
+
+Account and security
+
+0 of 9 reviewed
+
+Profile and account settings
+
+Privacy controls
+
+Session management
+
+Password recovery
+
+Account deletion and deactivation
+
+Secure storage
+
+Backend-enforced permissions
+
+Row Level Security
+
+Rate limiting and abuse prevention
+
+Administration
+
+0 of 18 reviewed
+
+Admin dashboard and KPIs
+
+User management
+
+Content management
+
+Relationship management
+
+Privacy enforcement
+
+Messaging health
+
+Voice and media moderation
+
+Reports and moderation queues
+
+Appeals
+
+Verification
+
+Announcements
+
+Support tickets
+
+UNIFY MIRROR administration
+
+Analytics and reporting
+
+System health monitoring
+
+Admin roles and permissions
+
+Audit logs
+
+Data protection and compliance
+
+Future expansion
+
+0 of 8 reviewed
+
+Communities and groups
+
+Short-form video
+
+Voice calling
+
+Video calling
+
+Creator tools
+
+Subscriptions and monetisation
+
+Android application
+
+iOS application
+
+Reset checklist
+
+### 17\. Recommended development roadmap
+
+A platform this ambitious should be built in stages. We should not attempt to activate every feature simultaneously.
+
+* Phase 1 — Core application foundation
+
+    Responsive interface, navigation, design system, authentication, user profiles and database foundation.
+
+* Phase 2 — Social networking
+
+    Feed, posts, photos, videos, likes, comments, follows, private accounts, blocking and Discover.
+
+* Phase 3 — Communication
+
+    Direct messaging, message requests, realtime delivery, voice messages, notifications and voice comments.
+
+* Phase 4 — UNIFY MIRROR
+
+    Integration adapter foundation, official OAuth, connected accounts, external content and publishing capabilities.
+
+* Phase 5 — UNIFY CONTROL CENTRE
+
+    Admin authentication, permissions, user management, moderation, reporting, analytics and system health.
+
+* Phase 6 — Testing and production readiness
+
+    Security testing, RLS verification, performance testing, error handling, backups and deployment.
+
+* Phase 7 — Expansion
+
+    Communities, short-form video, calling, creator features and native Android/iOS applications.
+
+### 18\. What makes UNIFY different?
+
+The main competitive idea is the combination of three major systems:
+
+UNIFY SOCIAL
+
+### Connect people.
+
+Profiles, feeds, stories, posts, followers, discovery and communities.
+
+UNIFY MIRROR
+
+### Connect platforms.
+
+Multiple external accounts, unified publishing, supported content viewing and social account management.
+
+UNIFY CONTROL CENTRE
+
+### Control the ecosystem.
+
+Administration, security, moderation, analytics, integrations and platform operations.
+
+### 19\. Important distinction: planned versus implemented
+
+This document describes the complete product vision and agreed requirements. It does not establish that every feature is already working in your current Emergent/Gemini build.
+
+From the progress screenshot you shared, the development had reached a stage where production OAuth credentials were still needed for token refresh, and the recommended next step was the Supabase database schema, RLS policies and Realtime configuration.
+
+Before launch, each feature must be tested and classified as:
+
+* Implemented and tested: works with real backend data.
+
+* Implemented but not fully tested: code exists, but reliability or security is unverified.
+
+* Prototype: interface exists, but the real functionality is not connected.
+
+* Pending integration: requires external credentials or platform approval.
+
+* Future development: planned but not yet built.
+
+This distinction is essential. We want a real social platform, not a beautiful interface full of buttons that do nothing.
+
+### My final recommendation
+
+Build UNIFY around three pillars from the beginning:
+
+* A strong social network that people genuinely want to use.
+
+* UNIFY MIRROR as the flagship differentiator that connects supported external platforms.
+
+* UNIFY CONTROL CENTRE as the secure operational foundation that keeps the ecosystem manageable.
+
+The most important thing now is to preserve this complete specification as the master product blueprint and use it to guide development, testing and future upgrades.
+
+I can also turn this entire blueprint into a comprehensive master development document that you can give directly to Gemini or Emergent, so it can use the full UNIFY specification as its development roadmap.
