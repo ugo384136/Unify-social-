@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import coil.compose.AsyncImage
 import com.example.model.Post
+import com.example.model.ReactionType
 import com.example.model.User
 import com.example.ui.components.PostCard
 import com.example.ui.theme.UnifyCyan
@@ -35,9 +36,20 @@ import com.example.ui.theme.UnifyViolet
 fun ProfileScreen(
   user: User,
   userPosts: List<Post>,
+  isUserPostsLoading: Boolean = false,
+  authUserEmail: String? = null,
+  authUserUid: String? = null,
+  authUserProvider: String? = "Google Account",
+  authAccountCreatedAt: String? = null,
+  authLastSignInAt: String? = null,
   onPrivacyToggle: (Boolean) -> Unit,
   onUpdateProfile: (name: String, bio: String, location: String, website: String) -> Unit,
   onSignOut: () -> Unit,
+  onLikePost: (String) -> Unit = {},
+  onReactPost: (String, ReactionType) -> Unit = { _, _ -> },
+  onRepostPost: (String) -> Unit = {},
+  onSharePost: (String) -> Unit = {},
+  onCreatePostShortcut: () -> Unit = {},
   modifier: Modifier = Modifier
 ) {
   var isEditDialogOpen by remember { mutableStateOf(false) }
@@ -47,6 +59,11 @@ fun ProfileScreen(
   var editBio by remember { mutableStateOf(user.bio) }
   var editLocation by remember { mutableStateOf(user.location) }
   var editWebsite by remember { mutableStateOf(user.website) }
+
+  // Derive myPosts from user's posts or filtered list
+  val myPosts = remember(userPosts, user.id) {
+    userPosts.filter { it.author.id == user.id || it.author.username == user.username }
+  }
 
   LazyColumn(
     modifier = modifier
@@ -99,7 +116,7 @@ fun ProfileScreen(
           )
         }
 
-        // Edit Profile Button
+        // Edit Profile Button & Sign Out Button
         Row(
           modifier = Modifier
             .align(Alignment.BottomEnd)
@@ -217,7 +234,7 @@ fun ProfileScreen(
 
         Spacer(modifier = Modifier.height(14.dp))
 
-        // Stats Row (Followers, Following, Posts)
+        // Stats Row (Posts, Followers, Following)
         Card(
           shape = RoundedCornerShape(16.dp),
           colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
@@ -228,13 +245,118 @@ fun ProfileScreen(
               .padding(vertical = 12.dp),
             horizontalArrangement = Arrangement.SpaceEvenly
           ) {
-            ProfileStatItem(count = "${user.postsCount}", label = "Posts")
+            ProfileStatItem(count = "${myPosts.size}", label = "Posts")
             ProfileStatItem(count = "${user.followersCount}", label = "Followers")
             ProfileStatItem(count = "${user.followingCount}", label = "Following")
           }
         }
 
         Spacer(modifier = Modifier.height(14.dp))
+
+        // Firebase Auth Data & Security Status Card
+        Card(
+          shape = RoundedCornerShape(16.dp),
+          colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+          border = CardDefaults.outlinedCardBorder(),
+          modifier = Modifier.fillMaxWidth().testTag("auth_info_card")
+        ) {
+          Column(
+            modifier = Modifier
+              .fillMaxWidth()
+              .padding(14.dp)
+          ) {
+            Row(
+              verticalAlignment = Alignment.CenterVertically,
+              horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+              Icon(
+                imageVector = Icons.Default.VerifiedUser,
+                contentDescription = null,
+                tint = UnifyCyan,
+                modifier = Modifier.size(18.dp)
+              )
+              Text(
+                text = "Firebase Auth Identity",
+                style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold)
+              )
+              Spacer(modifier = Modifier.weight(1f))
+              Surface(
+                shape = RoundedCornerShape(8.dp),
+                color = UnifyCyan.copy(alpha = 0.15f)
+              ) {
+                Text(
+                  text = authUserProvider ?: "Google Account",
+                  style = MaterialTheme.typography.labelSmall.copy(
+                    fontWeight = FontWeight.Bold,
+                    color = UnifyCyan
+                  ),
+                  modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                )
+              }
+            }
+
+            Spacer(modifier = Modifier.height(10.dp))
+            Divider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.4f))
+            Spacer(modifier = Modifier.height(10.dp))
+
+            // Email Row
+            authUserEmail?.let { email ->
+              Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+              ) {
+                Text(
+                  text = "Email Address",
+                  style = MaterialTheme.typography.labelSmall,
+                  color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                  text = email,
+                  style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.SemiBold),
+                  color = MaterialTheme.colorScheme.onSurface
+                )
+              }
+              Spacer(modifier = Modifier.height(6.dp))
+            }
+
+            // UID Row
+            Row(
+              modifier = Modifier.fillMaxWidth(),
+              horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+              Text(
+                text = "Account UID",
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+              )
+              Text(
+                text = (authUserUid ?: user.id).take(18) + "...",
+                style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Medium),
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+              )
+            }
+            Spacer(modifier = Modifier.height(6.dp))
+
+            // Account Created / Last Sign In Row
+            Row(
+              modifier = Modifier.fillMaxWidth(),
+              horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+              Text(
+                text = "Member Since",
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+              )
+              Text(
+                text = authAccountCreatedAt ?: "Recent",
+                style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.SemiBold),
+                color = MaterialTheme.colorScheme.onSurface
+              )
+            }
+          }
+        }
+
+        Spacer(modifier = Modifier.height(12.dp))
 
         // Privacy Toggle Setting (Public / Private account)
         Card(
@@ -318,27 +440,86 @@ fun ProfileScreen(
         Tab(
           selected = profileTab == 0,
           onClick = { profileTab = 0 },
-          text = { Text("My Posts", fontWeight = FontWeight.Bold) }
+          text = {
+            Text("My Posts (${myPosts.size})", fontWeight = FontWeight.Bold)
+          },
+          modifier = Modifier.testTag("profile_tab_posts")
         )
         Tab(
           selected = profileTab == 1,
           onClick = { profileTab = 1 },
-          text = { Text("Media Grid", fontWeight = FontWeight.Bold) }
+          text = { Text("Media Grid", fontWeight = FontWeight.Bold) },
+          modifier = Modifier.testTag("profile_tab_media")
         )
       }
     }
 
-    val myPosts = userPosts.filter { it.author.id == user.id }
+    // Past Posts List rendered via LazyColumn items
     if (profileTab == 0) {
-      if (myPosts.isEmpty()) {
+      if (isUserPostsLoading && myPosts.isEmpty()) {
         item {
           Box(
             modifier = Modifier
               .fillMaxWidth()
-              .padding(32.dp),
+              .padding(48.dp),
             contentAlignment = Alignment.Center
           ) {
-            Text("No posts published yet.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+              CircularProgressIndicator(
+                modifier = Modifier.size(32.dp),
+                color = UnifyCyan,
+                strokeWidth = 3.dp
+              )
+              Spacer(modifier = Modifier.height(12.dp))
+              Text(
+                text = "Loading your posts from Firestore...",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+              )
+            }
+          }
+        }
+      } else if (myPosts.isEmpty()) {
+        item {
+          Box(
+            modifier = Modifier
+              .fillMaxWidth()
+              .padding(36.dp),
+            contentAlignment = Alignment.Center
+          ) {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+              Icon(
+                imageVector = Icons.Default.CloudQueue,
+                contentDescription = null,
+                modifier = Modifier.size(42.dp),
+                tint = MaterialTheme.colorScheme.onSurfaceVariant
+              )
+              Spacer(modifier = Modifier.height(10.dp))
+              Text(
+                text = "No past posts found on Firestore",
+                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                color = MaterialTheme.colorScheme.onSurface
+              )
+              Spacer(modifier = Modifier.height(4.dp))
+              Text(
+                text = "Your published posts and updates will appear here in real-time.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+              )
+              Spacer(modifier = Modifier.height(16.dp))
+              Button(
+                onClick = onCreatePostShortcut,
+                colors = ButtonDefaults.buttonColors(
+                  containerColor = UnifyCyan,
+                  contentColor = Color.Black
+                ),
+                shape = RoundedCornerShape(12.dp)
+              ) {
+                Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(16.dp))
+                Spacer(modifier = Modifier.width(6.dp))
+                Text("Create Post")
+              }
+            }
           }
         }
       } else {
@@ -346,10 +527,10 @@ fun ProfileScreen(
           PostCard(
             post = post,
             currentUserId = user.id,
-            onLikeClick = {},
-            onReactClick = {},
-            onRepostClick = {},
-            onShareClick = {},
+            onLikeClick = { onLikePost(post.id) },
+            onReactClick = { reaction -> onReactPost(post.id, reaction) },
+            onRepostClick = { onRepostPost(post.id) },
+            onShareClick = { onSharePost(post.id) },
             onFollowAuthorClick = {},
             onAddComment = { _, _, _ -> }
           )

@@ -41,12 +41,83 @@
         }
       },
       "required": ["userId", "email", "displayName", "username", "createdAt", "updatedAt"]
+    },
+    "Post": {
+      "title": "Post",
+      "description": "Social feed post in UNIFY Socials",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Author UID"
+        },
+        "authorName": {
+          "type": "string",
+          "description": "Author display name"
+        },
+        "authorUsername": {
+          "type": "string",
+          "description": "Author username handle"
+        },
+        "authorAvatarUrl": {
+          "type": "string",
+          "description": "Author avatar photo URL"
+        },
+        "text": {
+          "type": "string",
+          "description": "Post text content"
+        },
+        "mediaUrl": {
+          "type": "string",
+          "description": "Optional image media URL"
+        },
+        "likesCount": {
+          "type": "integer",
+          "description": "Number of likes"
+        },
+        "likedUserIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of user UIDs who liked the post"
+        },
+        "repostsCount": {
+          "type": "integer",
+          "description": "Number of reposts"
+        },
+        "commentsCount": {
+          "type": "integer",
+          "description": "Number of comments"
+        },
+        "isVoicePost": {
+          "type": "boolean",
+          "description": "Whether this post has audio"
+        },
+        "voiceDurationSec": {
+          "type": "integer",
+          "description": "Duration of voice note in seconds"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Post creation server timestamp"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Post updated server timestamp"
+        }
+      },
+      "required": ["userId", "authorName", "authorUsername", "authorAvatarUrl", "text", "createdAt", "updatedAt"]
     }
   },
   "firestore": {
     "/users/{userId}": {
       "schema": "UserProfile",
       "description": "Stores user profile and account details keyed by user ID"
+    },
+    "/posts/{postId}": {
+      "schema": "Post",
+      "description": "Public social feed posts rendered in LazyColumn feed"
     }
   }
 }

@@ -37,6 +37,7 @@ fun HomeScreen(
   currentUser: User,
   selectedTab: Int, // 0 = For You, 1 = Following
   isCreatePostOpen: Boolean,
+  isFeedLoading: Boolean = false,
   onTabSelected: (Int) -> Unit,
   onStoryClick: (UserStories) -> Unit,
   onAddStoryClick: () -> Unit,
@@ -112,6 +113,49 @@ fun HomeScreen(
         }
       }
 
+      // Live Cloud Firestore indicator banner
+      item {
+        Row(
+          modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 6.dp),
+          horizontalArrangement = Arrangement.SpaceBetween,
+          verticalAlignment = Alignment.CenterVertically
+        ) {
+          Surface(
+            shape = RoundedCornerShape(20.dp),
+            color = UnifyCyan.copy(alpha = 0.12f),
+            border = CardDefaults.outlinedCardBorder()
+          ) {
+            Row(
+              modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp),
+              verticalAlignment = Alignment.CenterVertically,
+              horizontalArrangement = Arrangement.spacedBy(6.dp)
+            ) {
+              Box(
+                modifier = Modifier
+                  .size(8.dp)
+                  .clip(CircleShape)
+                  .background(if (isFeedLoading) MaterialTheme.colorScheme.tertiary else UnifyCyan)
+              )
+              Text(
+                text = if (isFeedLoading) "Syncing Cloud Feed..." else "Firestore Live Sync Active",
+                style = MaterialTheme.typography.labelSmall.copy(
+                  fontWeight = FontWeight.SemiBold,
+                  color = if (isFeedLoading) MaterialTheme.colorScheme.tertiary else UnifyCyan
+                )
+              )
+            }
+          }
+
+          Text(
+            text = "${posts.size} posts",
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+          )
+        }
+      }
+
       // Filtered Feed Items
       val displayedPosts = if (selectedTab == 0) {
         posts.filter { it.isForYou }
@@ -119,7 +163,30 @@ fun HomeScreen(
         posts.filter { it.author.isFollowing || it.author.id == currentUser.id }
       }
 
-      if (displayedPosts.isEmpty()) {
+      if (isFeedLoading && displayedPosts.isEmpty()) {
+        item {
+          Box(
+            modifier = Modifier
+              .fillMaxWidth()
+              .padding(48.dp),
+            contentAlignment = Alignment.Center
+          ) {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+              CircularProgressIndicator(
+                modifier = Modifier.size(36.dp),
+                color = UnifyCyan,
+                strokeWidth = 3.dp
+              )
+              Spacer(modifier = Modifier.height(16.dp))
+              Text(
+                text = "Fetching live feed from Firestore...",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+              )
+            }
+          }
+        }
+      } else if (displayedPosts.isEmpty()) {
         item {
           Box(
             modifier = Modifier
@@ -129,16 +196,29 @@ fun HomeScreen(
           ) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
               Text(
-                text = "No posts in Following yet",
-                style = MaterialTheme.typography.titleMedium,
+                text = if (selectedTab == 0) "No posts in the Cloud Feed yet" else "No posts in Following yet",
+                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                 color = MaterialTheme.colorScheme.onSurface
               )
-              Spacer(modifier = Modifier.height(4.dp))
+              Spacer(modifier = Modifier.height(6.dp))
               Text(
-                text = "Follow more creators or check the 'For You' stream!",
+                text = if (selectedTab == 0) "Be the first creator to publish a post to Firestore!" else "Follow more creators or explore the 'For You' stream!",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
               )
+              Spacer(modifier = Modifier.height(16.dp))
+              Button(
+                onClick = { onToggleCreatePost(true) },
+                colors = ButtonDefaults.buttonColors(
+                  containerColor = UnifyCyan,
+                  contentColor = Color.Black
+                ),
+                shape = RoundedCornerShape(12.dp)
+              ) {
+                Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(16.dp))
+                Spacer(modifier = Modifier.width(6.dp))
+                Text("Create First Post")
+              }
             }
           }
         }

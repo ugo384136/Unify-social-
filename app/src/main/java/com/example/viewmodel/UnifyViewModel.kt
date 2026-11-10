@@ -28,6 +28,15 @@ data class UnifyUiState(
   val activeStoryViewer: UserStories? = null,
   val activeStoryIndex: Int = 0,
   val posts: List<Post> = UnifySampleData.samplePosts,
+  val firestorePosts: List<Post> = emptyList(),
+  val userFirestorePosts: List<Post> = emptyList(),
+  val isFeedLoading: Boolean = false,
+  val isUserPostsLoading: Boolean = false,
+  val authUserEmail: String? = null,
+  val authUserUid: String? = null,
+  val authUserProvider: String? = "Google Account",
+  val authAccountCreatedAt: String? = null,
+  val authLastSignInAt: String? = null,
   val feedTab: Int = 0, // 0 = For You, 1 = Following
   val activeCommentsPostId: String? = null,
   val isCreatePostOpen: Boolean = false,
@@ -64,6 +73,58 @@ class UnifyViewModel : ViewModel() {
   private val _uiState = MutableStateFlow(UnifyUiState())
   val uiState: StateFlow<UnifyUiState> = _uiState.asStateFlow()
 
+  private var postRepository: com.example.data.PostRepository? = null
+
+  fun initRepository(context: android.content.Context, firebaseUser: com.google.firebase.auth.FirebaseUser? = null) {
+    if (postRepository == null) {
+      postRepository = com.example.data.PostRepository(context.applicationContext)
+    }
+    startObservingFeed()
+    firebaseUser?.let { user ->
+      setAuthenticatedUser(user)
+      startObservingUserPosts(user.uid)
+      viewModelScope.launch {
+        postRepository?.seedInitialPostsIfEmpty(user.uid)
+      }
+    }
+  }
+
+  private fun startObservingFeed() {
+    val repo = postRepository ?: return
+    _uiState.update { it.copy(isFeedLoading = true) }
+    viewModelScope.launch {
+      repo.observeFeedPosts().collect { firestoreList ->
+        val currentUid = _uiState.value.currentUser.id
+        val uiPosts = firestoreList.map { it.toUiPost(currentUid) }
+        _uiState.update { state ->
+          state.copy(
+            posts = if (uiPosts.isNotEmpty()) uiPosts else state.posts,
+            firestorePosts = uiPosts,
+            isFeedLoading = false
+          )
+        }
+      }
+    }
+  }
+
+  private fun startObservingUserPosts(userId: String) {
+    val repo = postRepository ?: return
+    _uiState.update { it.copy(isUserPostsLoading = true) }
+    viewModelScope.launch {
+      repo.observeUserPosts(userId).collect { userList ->
+        val currentUid = _uiState.value.currentUser.id
+        val uiPosts = userList.map { it.toUiPost(currentUid) }
+        _uiState.update { state ->
+          state.copy(
+            userFirestorePosts = uiPosts,
+            isUserPostsLoading = false,
+            currentUser = state.currentUser.copy(postsCount = uiPosts.size)
+          )
+        }
+      }
+    }
+  }
+
   fun setNavigation(destination: MainNavDestination) {
     _uiState.update { it.copy(currentNav = destination, isMirrorModeOpen = false, isAdminControlCentreOpen = false) }
   }
@@ -73,17 +134,38 @@ class UnifyViewModel : ViewModel() {
     val username = firebaseUser.email?.substringBefore("@")?.lowercase() ?: "creator"
     val avatar = firebaseUser.photoUrl?.toString() ?: _uiState.value.currentUser.avatarUrl
 
+    val creationTime = firebaseUser.metadata?.creationTimestamp?.let {
+      java.text.SimpleDateFormat("MMM dd, yyyy", java.util.Locale.getDefault()).format(java.util.Date(it))
+    } ?: "Recent"
+
+    val lastSignIn = firebaseUser.metadata?.lastSignInTimestamp?.let {
+      java.text.SimpleDateFormat("MMM dd, yyyy HH:mm", java.util.Locale.getDefault()).format(java.util.Date(it))
+    } ?: "Active now"
+
+    val providerId = firebaseUser.providerData.firstOrNull { it.providerId != "firebase" }?.providerId ?: "google.com"
+    val providerDisplay = if (providerId.contains("google", ignoreCase = true)) "Google Account" else providerId
+
     _uiState.update { state ->
       val updatedUser = state.currentUser.copy(
         id = firebaseUser.uid,
         displayName = name,
         username = username,
         avatarUrl = avatar,
-        bio = if (state.currentUser.bio.isNotBlank()) state.currentUser.bio else "UNIFY Socials member • Building connections",
+        bio = if (state.currentUser.bio.isNotBlank()) state.currentUser.bio else "UNIFY Socials creator • Connecting networks in real time",
         isVerified = true
       )
-      state.copy(currentUser = updatedUser)
+      state.copy(
+        currentUser = updatedUser,
+        authUserEmail = firebaseUser.email,
+        authUserUid = firebaseUser.uid,
+        authUserProvider = providerDisplay,
+        authAccountCreatedAt = creationTime,
+        authLastSignInAt = lastSignIn
+      )
     }
+
+    // Also observe user's past posts from Firestore
+    startObservingUserPosts(firebaseUser.uid)
   }
 
   fun toggleMirrorHub(open: Boolean) {
@@ -183,7 +265,19 @@ class UnifyViewModel : ViewModel() {
           post.copy(isLiked = newLiked, likesCount = newCount, userReaction = newReaction)
         } else post
       }
-      state.copy(posts = updatedPosts)
+      val updatedUserPosts = state.userFirestorePosts.map { post ->
+        if (post.id == postId) {
+          val newLiked = !post.isLiked
+          val newCount = if (newLiked) post.likesCount + 1 else maxOf(0, post.likesCount - 1)
+          val newReaction = if (newLiked) ReactionType.LIKE else null
+          post.copy(isLiked = newLiked, likesCount = newCount, userReaction = newReaction)
+        } else post
+      }
+      state.copy(posts = updatedPosts, userFirestorePosts = updatedUserPosts)
+    }
+
+    viewModelScope.launch {
+      postRepository?.toggleLike(postId)
     }
   }
 
@@ -260,9 +354,10 @@ class UnifyViewModel : ViewModel() {
     tags: List<String> = emptyList()
   ) {
     if (text.isBlank() && mediaUrl == null) return
+    val currentUser = _uiState.value.currentUser
     val newPost = Post(
       id = "post_${System.currentTimeMillis()}",
-      author = _uiState.value.currentUser,
+      author = currentUser,
       text = text,
       mediaUrls = if (mediaUrl != null) listOf(mediaUrl) else emptyList(),
       timestamp = "Just now",
@@ -274,11 +369,26 @@ class UnifyViewModel : ViewModel() {
     _uiState.update { state ->
       state.copy(
         posts = listOf(newPost) + state.posts,
+        userFirestorePosts = listOf(newPost) + state.userFirestorePosts,
         isCreatePostOpen = false,
         currentUser = state.currentUser.copy(postsCount = state.currentUser.postsCount + 1)
       )
     }
-    showSnackbar("Post published to UNIFY Feed!")
+
+    viewModelScope.launch {
+      val result = postRepository?.createPost(
+        text = text,
+        mediaUrl = mediaUrl,
+        authorName = currentUser.displayName,
+        authorUsername = currentUser.username,
+        authorAvatarUrl = currentUser.avatarUrl
+      )
+      if (result?.isSuccess == true) {
+        showSnackbar("Post published to UNIFY Cloud Feed! 🚀")
+      } else {
+        showSnackbar("Post published locally.")
+      }
+    }
   }
 
   // --- Messaging Operations ---

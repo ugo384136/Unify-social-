@@ -57,7 +57,7 @@ class MainActivity : ComponentActivity() {
           SignInScreen(
             onAuthSuccess = { user ->
               firebaseUser = user
-              viewModel.setAuthenticatedUser(user)
+              viewModel.initRepository(context, user)
               viewModel.showSnackbar("Welcome to UNIFY, ${user.displayName ?: "Creator"}!")
             }
           )
@@ -66,6 +66,11 @@ class MainActivity : ComponentActivity() {
           key(currentUid) {
             val uiState by viewModel.uiState.collectAsStateWithLifecycle()
             val snackbarHostState = remember { SnackbarHostState() }
+
+            // Ensure repository and Firestore flows are connected
+            LaunchedEffect(currentUid) {
+              viewModel.initRepository(context, firebaseUser)
+            }
 
             // Show transient status snacks
             LaunchedEffect(uiState.statusSnackbarMessage) {
@@ -177,6 +182,7 @@ class MainActivity : ComponentActivity() {
                           currentUser = uiState.currentUser,
                           selectedTab = uiState.feedTab,
                           isCreatePostOpen = uiState.isCreatePostOpen,
+                          isFeedLoading = uiState.isFeedLoading,
                           onTabSelected = { viewModel.setFeedTab(it) },
                           onStoryClick = { viewModel.openStoryViewer(it) },
                           onAddStoryClick = { viewModel.addQuickStory("Just updated my story! 🚀") },
@@ -231,7 +237,13 @@ class MainActivity : ComponentActivity() {
                       MainNavDestination.PROFILE -> {
                         ProfileScreen(
                           user = uiState.currentUser,
-                          userPosts = uiState.posts,
+                          userPosts = if (uiState.userFirestorePosts.isNotEmpty()) uiState.userFirestorePosts else uiState.posts,
+                          isUserPostsLoading = uiState.isUserPostsLoading,
+                          authUserEmail = uiState.authUserEmail ?: firebaseUser?.email,
+                          authUserUid = uiState.authUserUid ?: firebaseUser?.uid,
+                          authUserProvider = uiState.authUserProvider,
+                          authAccountCreatedAt = uiState.authAccountCreatedAt,
+                          authLastSignInAt = uiState.authLastSignInAt,
                           onPrivacyToggle = { viewModel.toggleAccountPrivacy(it) },
                           onUpdateProfile = { name, bio, loc, web ->
                             viewModel.updateProfile(name, bio, loc, web)
@@ -245,6 +257,14 @@ class MainActivity : ComponentActivity() {
                                 viewModel.showSnackbar("Signed out successfully.")
                               }
                             )
+                          },
+                          onLikePost = { viewModel.toggleLikePost(it) },
+                          onReactPost = { postId, rx -> viewModel.reactToPost(postId, rx) },
+                          onRepostPost = { viewModel.repostPost(it) },
+                          onSharePost = { viewModel.showSnackbar("Post link copied!") },
+                          onCreatePostShortcut = {
+                            viewModel.setNavigation(MainNavDestination.HOME)
+                            viewModel.toggleCreatePostModal(true)
                           }
                         )
                       }
